@@ -33,8 +33,12 @@ class Candidate
     #[ORM\OneToMany(mappedBy: 'candidate', targetEntity: Electeur::class)]
     private Collection $vote;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255,nullable: true)]
     private ?string $filename = null;
+
+    #[ORM\OneToOne(cascade: ['persist'])]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Electeur $electeur = null;
 
     public function __construct()
     {
@@ -144,6 +148,18 @@ class Candidate
     public function setFilename(string $filename): static
     {
         $this->filename = $filename;
+
+        return $this;
+    }
+
+    public function getElecteur(): ?Electeur
+    {
+        return $this->electeur;
+    }
+
+    public function setElecteur(Electeur $electeur): static
+    {
+        $this->electeur = $electeur;
 
         return $this;
     }

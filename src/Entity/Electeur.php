@@ -25,8 +25,8 @@ class Electeur
     #[ORM\Column(length: 255)]
     private ?string $birth_place = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $birthday = null;
+    #[ORM\Column]
+    private ?\DateTimeImmutable $birthday = null;
 
     #[ORM\Column(length: 255)]
     private ?string $sign = null;
@@ -43,8 +43,8 @@ class Electeur
     #[ORM\Column(length: 255)]
     private ?string $mother_name = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $done_in = null;
+    #[ORM\Column]
+    private ?\DateTimeImmutable $done_in = null;
 
     #[ORM\ManyToOne(inversedBy: 'electeurs')]
     #[ORM\JoinColumn(nullable: false)]
@@ -52,8 +52,14 @@ class Electeur
 
     private File $imageFile;
 
-    #[ORM\ManyToOne(inversedBy: 'vote')]
+    #[ORM\ManyToOne(cascade: ['remove'], inversedBy: 'vote')]
     private ?Candidate $candidate = null;
+
+    #[ORM\Column]
+    private ?\DateTimeImmutable $created_at = null;
+
+    #[ORM\Column]
+    private ?\DateTimeImmutable $updated_at = null;
 
     public function getId(): ?int
     {
@@ -96,12 +102,12 @@ class Electeur
         return $this;
     }
 
-    public function getBirthday(): ?string
+    public function getBirthday(): ?\DateTimeImmutable
     {
         return $this->birthday;
     }
 
-    public function setBirthday(string $birthday): static
+    public function setBirthday(\DateTimeImmutable $birthday): static
     {
         $this->birthday = $birthday;
 
@@ -168,12 +174,12 @@ class Electeur
         return $this;
     }
 
-    public function getDoneIn(): ?string
+    public function getDoneIn(): ?\DateTimeImmutable
     {
         return $this->done_in;
     }
 
-    public function setDoneIn(string $done_in): static
+    public function setDoneIn(\DateTimeImmutable $done_in): static
     {
         $this->done_in = $done_in;
 
@@ -200,6 +206,30 @@ class Electeur
     public function setCandidate(?Candidate $candidate): static
     {
         $this->candidate = $candidate;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $created_at): static
+    {
+        $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(\DateTimeImmutable $updated_at): static
+    {
+        $this->updated_at = $updated_at;
 
         return $this;
     }

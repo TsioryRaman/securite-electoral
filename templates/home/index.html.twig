@@ -1,20 +1,122 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}E-Fidy
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/tsiory/project/securite-electoral/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/tsiory/project/securite-electoral/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
+	{# <nav class="bg-green-400 p-4 shadow-2xl ">
+																																																																																																													<div class="container  flex justify-between items-center">
+																																																																																																														<img src="/assets/images/flag.png" class="rounded-full w-20" alt="Description de l'image">
+																																																																																																														<a href="#" class="text-white text-2xl font-semibold">ELECTION</a>
+																																																																																																														<div class="flex space-x-14">
+																																																																																																															<a href="#" class="text-white hover:text-blue-300">Accueil</a>
+																																																																																																															<a href="#" class="text-white hover:text-blue-300">À propos</a>
+																																																																																																															<a href="#" class="text-white hover:text-blue-300">Services</a>
+																																																																																																															<a href="#" class="text-white hover:text-blue-300">Contact</a>
+																																																																																																														</div>
+																																																																																																														<div class="relative">
+																																																																																																															<input type="search" placeholder="Rechercher..." class="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none">
+																																																																																																															<button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+																																																																																																																<Icon-feather name="search"></Icon-feather>
+																																																																																																															</button>
+																																																																																																														</div>
+																																																																																																													</div>
+																																																																																																												</nav> #}
+<div class="md:min-h-screen bg-green-50 md:max-h-screen">
+
+	<div
+			class="flex container py-4 relative sm:min-h-screen justify-center  md:max-h-screen flex-row gap-4 mx-auto">
+		{# <div
+																																																																																																																																																																																																									class="bg-cover bg-center backdrop-blur-md w-1/2 opacity-60" style="background-image: url('/assets/images/carte.png');">
+																																																																																																																																																																																																									<!-- Contenu de votre page -->
+
+
+																																																																																																																																																																																																									<div>
+																																																																																																																																																																																																										<!-- Contenu de la div de gauche -->
+																																																																																																																																																																																																										<div class="flex items-center justify-center h-screen">
+																																																																																																																																																																																																											<div class="text-5xl text-center  font-bold">
+																																																																																																																																																																																																												<span class="">Cast your vote for the finest</span>
+																																																																																																																																																																																																												<span class="text-red-600">candidates</span>
+																																																																																																																																																																																																											</div>
+																																																																																																																																																																																																										</div>
+																																																																																																																																																																																																									</div>
+																																																																																																																																																																																																								</div> #}
+		<a href="{{ path('login-electeur') }}"
+				class="bg-green-400 hover:scale-95 hover:bg-green-500 duration-300 cursor-pointer flex items-center justify-center rounded shadow p-6 max-w-md  text-center w-1/2">
+			<!-- Icône en haut -->
+			<div class="text-3xl text-white flex items-center flex-col">
+				<Icon-feather size="175" name="envelop"></Icon-feather>
+				<span class="text-bold mt-8 uppercase">Voter</span>
+			</div>
+
+
+		</a>
+
+
+		<a href=""
+				class="bg-red-400 hover:scale-95 hover:bg-red-500 duration-300 cursor-pointer flex items-center justify-center rounded shadow p-6 max-w-md  text-center w-1/2">
+			<!-- Icône en haut -->
+			<div class="text-3xl text-white flex items-center flex-col">
+				<Icon-feather size="175" name="eye"></Icon-feather>
+				<span class="text-bold mt-8 uppercase">voir les candidats
+				</span>
+			</div>
+
+
+		</a>
+	</div>
 </div>
+	{# </div>
+																																																																												<div class="">
+																																																																													<div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+																																																																														<div class="bg-white border rounded-lg shadow-md p-4">
+																																																																															<h2 class="text-xl font-semibold">
+																																																																																<Icon-feather name="save"></Icon-feather>
+																																																																															</h2>
+																																																																															<p>Contenu de la carte 1</p>
+																																																																														</div>
+																																																																											
+																																																																														<div class="bg-white border rounded-lg shadow-md p-4">
+																																																																															<h2 class="text-xl font-semibold">Carte 2</h2>
+																																																																															<p>Contenu de la carte 2</p>
+																																																																														</div>
+																																																																											
+																																																																														<div class="bg-white border rounded-lg shadow-md p-4">
+																																																																															<h2 class="text-xl font-semibold">Carte 3</h2>
+																																																																															<p>Contenu de la carte 3</p>
+																																																																														</div>
+																																																																											
+																																																																														<div class="bg-white border rounded-lg shadow-md p-4">
+																																																																															<h2 class="text-xl font-semibold">Carte 4</h2>
+																																																																															<p>Contenu de la carte 4</p>
+																																																																														</div>
+																																																																											
+																																																																														<div class="bg-white border rounded-lg shadow-md p-4">
+																																																																															<h2 class="text-xl font-semibold">Carte 5</h2>
+																																																																															<p>Contenu de la carte 5</p>
+																																																																														</div>
+																																																																											
+																																																																														<div class="bg-white border rounded-lg shadow-md p-4">
+																																																																															<h2 class="text-xl font-semibold">Carte 6</h2>
+																																																																															<p>Contenu de la carte 6</p>
+																																																																														</div>
+																																																																											
+																																																																														<div class="bg-white border rounded-lg shadow-md p-4">
+																																																																															<h2 class="text-xl font-semibold">Carte 7</h2>
+																																																																															<p>Contenu de la carte 7</p>
+																																																																														</div>
+																																																																											
+																																																																														<div class="bg-white border rounded-lg shadow-md p-4">
+																																																																															<h2 class="text-xl font-semibold">Carte 8</h2>
+																																																																															<p>Contenu de la carte 8</p>
+																																																																														</div>
+																																																																													</div>
+																																																																											
+																																																																											
+																																																																												</div> #}
+
+
+
 {% endblock %}

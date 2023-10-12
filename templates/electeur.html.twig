@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title "Se connecter" %}
+
+{% block body %}
+    <div class="min-h-screen flex flex-col">
+        <h1 class="text-3xl font-medium mb-12 mt-12 text-center">Ampidiro ny famatarana</h1>
+
+        <div class="border md:px-6 md:max-w-sm px-4 pb-12 pt-6 mt-12 max-w-md mx-auto relative border-gray-100 text-gray-600 rounded">
+
+            <form action="{{ path('login-electeur') }}" method="POST">
+                <div class="form-group">
+                    <label for="username">Anarana:</label>
+                    <input type="text" class="px-2 {%if username %}is-invalid{%endif%}" id="username" name="_username" value="{{ username }}" required placeholder="Anarana"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="cin">Laharana karapanondro</label>
+                    <input type="text" class="px-2 {%if username%}is-invalid{%endif%}" id="cin" name="_cin" required placeholder="Laharana karapanondro"/>
+                </div>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <button type="submit" class="px-4 py-2 rounded-sm shadow self-start bg-green-500 text-white hover:bg-green-400 duration-300">Hiditra</button>
+            </form>
+
+        </div>
+        <div class="mt-8"></div>
+        {% include 'component/footer.html.twig' %}
+    </div>
+{% endblock %}
