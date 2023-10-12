@@ -1,20 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Hello HomeController!
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/tsiory/project/securite-electoral/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/tsiory/project/securite-electoral/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+	<div class="bg-red-500 p-4">
+		<div class="container mx-auto flex justify-between items-center">
+			<a href="#" class="text-white text-2xl font-semibold">MonSite</a>
+			<ul class="flex space-x-4">
+				<li>
+					<a href="#" class="text-white hover:text-blue-300">Accueil</a>
+				</li>
+				<li>
+					<a href="#" class="text-white hover:text-blue-300">À propos</a>
+				</li>
+				<li>
+					<a href="#" class="text-white hover:text-blue-300">Services</a>
+				</li>
+				<li>
+					<a href="#" class="text-white hover:text-blue-300">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 {% endblock %}
