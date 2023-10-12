@@ -1,0 +1,164 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello StatisticsController!{% endblock %}
+
+{% block body %}
+
+<div class="p-20 pt-10">
+   <div class="home bg-gradient-to-r from-blue-700 to-blue-200 p-20">
+        <h1 class=" text-center text-4xl font-bold text-gray-100">
+            Antontan'isa kandida
+        </h1> <br>
+        <p class="text-white text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, deserunt similique? Provident, vero dignissimos nostrum id quaerat voluptate deserunt tempora dolorem tempore, inventore quasi natus quisquam odio veniam quam quidem.</p>
+   </div>
+</div>
+
+<div class="text-center ">
+<label for="cars" class="text-3xl font-bold">safidio ny faritra:</label>
+<select name="cregion" id="region" form="carform" class="p-3 border rounded-5">
+  <option value="volvo">ANALAMANGA</option>
+  <option value="saab">BONGOLAVA</option>
+  <option value="opel">BETSIBOKA</option>
+  <option value="audi">ITASY</option>
+  <option value="volvo">DIANA</option>
+  <option value="saab">SAVA</option>
+  <option value="opel">SOFIA</option>
+  <option value="audi">MENABE</option>
+</select>
+
+</div>
+
+<div>
+  <canvas id="myChart" width="400" height="150"></canvas>
+</div> 
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  const labels = ['Tahina RAZAFINJOELINA', 'Hajo ANDRIANAINARIVELO', 'Andry RAJOELINA', 'Roland RATSIRAKA', 'Marc RAVALOMANANA', 'Auguste PARAINA', 'Andry RAOBELINA',
+                'Jean RAZAFITSIANDRAOFA', 'Lalaina RATSIRAHONANA', 'Hery RAJAONARIMAMPIANINA', 'Sendrison RADERANIRINA', 'Jean Jacques RATSIETISON', 'Siteny RANDRIANASOLONIAKO']
+  
+  const data = {
+    labels: labels,
+    datasets: [{
+        //label: 'My First Dataset',
+        data: [70, 59, 180, 81, 190, 55, 100, 7, 59, 80, 81, 56, 55, 70],
+        backgroundColor: [
+        'Olive',
+        'green',
+        'orange',
+        'rgba(75, 192, 192, 0.5)',
+        'red',
+        'purple',
+        'grey',
+        'pink',
+        'Cyan',
+        'blue',
+        'rgba(75, 192, 192, 0.5)',
+        'rgba(255, 62, 35, 0.5)',
+        'yellow',
+        ],
+        // borderColor: [
+        // 'rgb(255, 99, 132)',
+        // 'rgb(255, 159, 64)',
+        // 'rgb(255, 205, 86)',
+        // 'rgb(75, 192, 192)',
+        // 'rgb(254, 62, 35)',
+        // 'rgb(153, 102, 255)',
+        // 'rgb(90, 90, 90)',
+        // 'rgb(255, 99, 132)',
+        // 'rgb(255, 159, 64)',
+        // 'rgb(255, 205, 86)',
+        // 'rgb(75, 192, 192)',
+        // 'rgb(254, 62, 35)',
+        // 'rgb(153, 102, 255)',
+        // 'rgb(201, 203, 207)'
+        // ],
+        //borderWidth: 3
+        }]
+    };
+
+    const annotations = [
+    {
+        type: 'image',
+        src: 'ravalo.jpg',
+        x: 0,
+        y: 2000,
+        width: 30,
+        height: 30
+    },
+    {
+        type: 'image',
+        src: "hery.jpg",
+        x: 'center',
+        y: 'top',
+        width: 30,
+        height: 30
+    },
+    {
+        type: 'image',
+        src: 'ravalo.jpg',
+        x: 'center',
+        y: 'top',
+        width: 30,
+        height: 30
+    },
+    {
+        type: 'image',
+        src: 'hery.jpg',
+        x: 'center',
+        y: 'top',
+        width: 30,
+        height: 30
+    },
+    {
+        type: 'image',
+        src: 'ravalo.jpg',
+        x: 'center',
+        y: 'top',
+        width: 30,
+        height: 30
+    },
+    {
+        type: 'image',
+        src: 'hery.jpg',
+        x: 'center',
+        y: 'top',
+        width: 30,
+        height: 30
+    },
+    {
+        type: 'image',
+        src: 'hery.jpg',
+        x: 'center',
+        y: 'top',
+        width: 30,
+        height: 30
+    },
+    ]
+
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: data,
+    options: {
+        indexAxis:'y',
+        scales: {
+            y: {
+            beginAtZero: true
+            }
+        }, 
+        // plugins: {
+        //     annotation: {
+        //         //drawTime: 'beforeDatasetsDraw',
+        //         annotations: annotations
+        //     }
+        // } 
+    }
+  });
+</script>
+
+{% endblock %}
