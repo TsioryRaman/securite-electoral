@@ -22,7 +22,7 @@ class CandidateRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Candidate[] Returns an array of Candidate objects
+//     * @return VoteFixtures[] Returns an array of VoteFixtures objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -36,7 +36,7 @@ class CandidateRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Candidate
+//    public function findOneBySomeField($value): ?VoteFixtures
 //    {
 //        return $this->createQueryBuilder('c')
 //            ->andWhere('c.exampleField = :val')
