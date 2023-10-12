@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Electeur;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -45,4 +46,17 @@ class ElecteurRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+    public function findLatest(?string $q): Query
+    {
+        $query = $this->createQueryBuilder('row')
+            ->orderBy('row.created_at', 'DESC');
+        if ($q) {
+            $query->where(
+                    $this->createQueryBuilder('e')
+                    ->expr()->like('row.name',':q')
+                )
+                ->setParameter('q','%' . $q . '%');
+        }
+        return $query->getQuery();
+    }
 }

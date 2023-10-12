@@ -27,8 +27,9 @@
 			display: block;
 		}
 	</style>
-	<body>
-		{% block body %}{% endblock %}
-	</body>
-
+    <body>
+        {% block body %}{% endblock %}
+        <div class="mt-8"></div>
+    {% include 'component/footer.html.twig' %}
+    </body>
 </html>

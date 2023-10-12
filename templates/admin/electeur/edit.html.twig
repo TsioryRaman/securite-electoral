@@ -1,0 +1,39 @@
+{% extends "admin/base_admin.html.twig" %}
+
+{% block title 'Modification des article | e-shop' %}
+{% block header %}
+    <h1 class="text-2xl py-6 mt-4 mb-8 flex flex-row items-center gap-2 text-gray-400 cursor-default">
+        <Icon-feather class="text-blue-500" name="edit" size="24"></Icon-feather>
+        Editer
+    </h1>
+{% endblock %}
+{% block body %}
+
+    {{ form_start(form) }}
+    <div class="flex gap-12 items-center flex-row space-between w-full">
+        {{ form_row(form.name) }}
+        {{ form_row(form.firstname) }}
+    </div>
+
+    <div class="flex w-full gap-6 space-between">
+        {{ form_row(form.birth_place) }}
+        {{ form_row(form.birthday) }}
+    </div>
+    <div class="flex w-full gap-6 space-between">
+        {{ form_row(form.sign) }}
+        {{ form_row(form.address) }}
+        {{ form_row(form.cin_number) }}
+    </div>
+    <div class="grid grid-cols-3 gap-6 items-center space-between">
+        {{ form_row(form.father_name) }}
+            {{ form_row(form.mother_name) }}
+    </div>
+
+    {{ form_rest(form) }}
+    <button class="px-4 mt-4 py-2 text-white rounded hover:bg-green-400 shadow-sm duration-300 bg-green-500">
+        Enregister
+    </button>
+
+    {{ form_end(form) }}
+
+{% endblock %}
