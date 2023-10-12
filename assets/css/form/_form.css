@@ -1,0 +1,117 @@
+label {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.85em;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+input:disabled {
+  opacity: 0.7;
+}
+
+.form-optional {
+  display: none !important;
+}
+
+.form-group {
+    width: inherit;
+    position: relative;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.form-group input,
+.form-group textarea,
+.form-group select,
+input {
+  border: 1px solid var(--border);
+  background: var(--background);
+  border-radius: 3px;
+  color: var(--color);
+  padding: 8px 16px;
+  display: block;
+  width: 100%;
+  outline: none;
+  min-height: 48px;
+}
+input[type=checkbox]{
+  min-height: 0px;
+  width: auto;
+}
+.form-group textarea {
+  min-height: 150px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: space(1);
+}
+.form-group select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23121c4299' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>");
+  background-size: 12px 12px;
+  background-position: center right 20px;
+  background-repeat: no-repeat;
+}
+
+.form-error {
+  color: rgba(255, 0, 0, 0.712);
+  text-shadow: 1px 0px 5px rgba(255, 0, 0, 0.445);
+  font-size: 0.75em;
+  position: absolute;
+  bottom: -rem;
+  left:0;
+}
+
+input.is-invalid {
+  color: rgba(255, 0, 0, 0.712);
+  border: 1px solid var(--red);
+}
+
+input[type='checkbox'].form-toggle{
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+.form-check label{
+  color: transparent;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  position: relative;
+  background-color: var(--background);
+  cursor: pointer;
+  border: 2px solid var(--border-light);
+  transition-duration: 300ms;
+
+}
+.form-check label:before{
+  transition-duration: 300ms;
+  content: '';
+  position: absolute;
+  color: transparent;
+  top: 2px;
+  left: 4px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+
+}
+input[type='checkbox']:checked + label:before{
+  left: 32.5px;
+}
+input[type='checkbox']:checked + label{
+  background-color: #5df35d;
+
+}
+.custom-file-input{
+  display: none !important;
+}
