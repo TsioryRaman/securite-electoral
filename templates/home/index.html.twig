@@ -24,14 +24,15 @@
 																																																																																																														</div>
 																																																																																																													</div>
 																																																																																																												</nav> #}
+<div class="md:min-h-screen bg-green-50 md:max-h-screen">
 
 	<div
-		class="flex container py-4 relative sm:min-h-screen justify-center  md:max-h-screen flex-row gap-4 mx-auto">
+			class="flex container py-4 relative sm:min-h-screen justify-center  md:max-h-screen flex-row gap-4 mx-auto">
 		{# <div
 																																																																																																																																																																																																									class="bg-cover bg-center backdrop-blur-md w-1/2 opacity-60" style="background-image: url('/assets/images/carte.png');">
 																																																																																																																																																																																																									<!-- Contenu de votre page -->
-																																																																																																																																																																																																						
-																																																																																																																																																																																																						
+
+
 																																																																																																																																																																																																									<div>
 																																																																																																																																																																																																										<!-- Contenu de la div de gauche -->
 																																																																																																																																																																																																										<div class="flex items-center justify-center h-screen">
@@ -42,8 +43,8 @@
 																																																																																																																																																																																																										</div>
 																																																																																																																																																																																																									</div>
 																																																																																																																																																																																																								</div> #}
-		<div
-			class="bg-green-400 hover:scale-95 duration-300 cursor-pointer flex items-center justify-center rounded shadow p-6 max-w-md  text-center w-1/2">
+		<a href="{{ path('login-electeur') }}"
+				class="bg-green-400 hover:scale-95 hover:bg-green-500 duration-300 cursor-pointer flex items-center justify-center rounded shadow p-6 max-w-md  text-center w-1/2">
 			<!-- Icône en haut -->
 			<div class="text-3xl text-white flex items-center flex-col">
 				<Icon-feather size="175" name="envelop"></Icon-feather>
@@ -51,11 +52,11 @@
 			</div>
 
 
-		</div>
+		</a>
 
 
-		<div
-			class="bg-red-400 hover:scale-95 duration-300 cursor-pointer flex items-center justify-center rounded shadow p-6 max-w-md  text-center w-1/2">
+		<a href=""
+				class="bg-red-400 hover:scale-95 hover:bg-red-500 duration-300 cursor-pointer flex items-center justify-center rounded shadow p-6 max-w-md  text-center w-1/2">
 			<!-- Icône en haut -->
 			<div class="text-3xl text-white flex items-center flex-col">
 				<Icon-feather size="175" name="eye"></Icon-feather>
@@ -64,8 +65,9 @@
 			</div>
 
 
-		</div>
+		</a>
 	</div>
+</div>
 	{# </div>
 																																																																												<div class="">
 																																																																													<div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">

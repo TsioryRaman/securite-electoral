@@ -28,8 +28,13 @@
 		}
 	</style>
     <body>
-        {% block body %}{% endblock %}
-        <div class="mt-8"></div>
-    {% include 'component/footer.html.twig' %}
+		<div class="relative w-full ">
+			{% for message in app.flashes('success') %}
+				<div class="absolute px-4 left-1/2	z-10 translate-x-2/4 mt-8 text-white py-2 bg-green-500 ">
+					{{ message }}
+				</div>
+			{% endfor %}
+			{% block body %}{% endblock %}
+		</div>
     </body>
 </html>
