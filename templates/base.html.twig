@@ -19,6 +19,14 @@
 			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
 	</head>
+	<style>
+		.carousel-item {
+			display: none;
+		}
+		.carousel-item.active {
+			display: block;
+		}
+	</style>
 	<body>
 		{% block body %}{% endblock %}
 	</body>
