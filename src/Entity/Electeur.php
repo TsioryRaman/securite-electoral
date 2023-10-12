@@ -50,7 +50,6 @@ class Electeur
     #[ORM\JoinColumn(nullable: false)]
     private ?VotePlace $votePlace = null;
 
-    #[Vic]
     private File $imageFile;
 
     #[ORM\ManyToOne(inversedBy: 'vote')]

@@ -7,6 +7,7 @@
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{vite_asset("main.js")}}
+            {{vite_asset("tailwind.js")}}
         {% endblock %}
 
         {% block javascripts %}
@@ -14,6 +15,7 @@
         {% endblock %}
     </head>
     <body>
+        <div class="bg-red-500 p-4">Tests</div>
         {% block body %}{% endblock %}
     </body>
 </html>
